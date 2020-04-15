@@ -7,19 +7,13 @@ import "strconv"
 func Convert(a int) string {
 	var message string
 	if (a % 3) == 0 {
-		message = message + "Pling"
-	} else {
-		message = message
+		message += "Pling"
 	}
 	if (a % 5) == 0 {
-		message = message + "Plang"
-	} else {
-		message = message
+		message += "Plang"
 	}
 	if (a % 7) == 0 {
-		message = message + "Plong"
-	} else {
-		message = message
+		message += "Plong"
 	}
 	if message == "" {
 		return strconv.Itoa(a)
