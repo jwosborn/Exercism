@@ -4,7 +4,7 @@ import "math"
 
 // SquareOfSum adds every number from 0 to the integer provided and squares the sum
 func SquareOfSum(a int) int {
-	var sum int = 0
+	sum := 0
 	for i := 0; i <= a; i++ {
 		sum += i
 	}
@@ -13,7 +13,7 @@ func SquareOfSum(a int) int {
 
 //SumOfSquares adds the square of every number from 0 to the integer provided and adds the square
 func SumOfSquares(a int) int {
-	var sum int = 0
+	sum := 0
 	for i := 0; i <= a; i++ {
 		sum += (i * i)
 	}

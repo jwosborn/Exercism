@@ -1,11 +1,12 @@
-export const toRna = (dna) => {
-  const rna = {
+const conversion = {
     G: "C",
     C: "G",
     T: "A",
     A: "U",
-  };
-  for (i = 0; i < dna.length(); i++) {
-    return rna.find(dna[i]).value;
-  }
+};
+
+export const toRna = (dnaString) => {
+return dnaString.split('').map(function(dna) {
+        return conversion[dna];
+    }).join('');
 };
