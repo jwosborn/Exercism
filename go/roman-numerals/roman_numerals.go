@@ -11,10 +11,10 @@ func ToRomanNumeral(n int) (string, error) {
 	hundreds := n % 1000 / 100
 	tens := n % 1000 % 100 / 10
 	ones := ((n % 1000) % 100) % 10
-	if n < 0 && n >= 3001 {
+	if n < 0 && n > 3000 {
 		return "", fmt.Errorf("bad bad")
 	} else {
-		for n != 0 {
+		if n != 0 {
 			for thousands < 4 && thousands > 0 {
 				roman += "M"
 				thousands--
@@ -56,7 +56,7 @@ func ToRomanNumeral(n int) (string, error) {
 				n -= 50
 			}
 			for tens == 4 {
-				roman += "IL"
+				roman += "XL"
 				tens -= 4
 				n -= 40
 			}
@@ -65,7 +65,12 @@ func ToRomanNumeral(n int) (string, error) {
 				ones -= 9
 				n -= 9
 			}
-			for ones > 5 || ones < 4 && ones > 0 {
+			for ones > 5 {
+				roman += "I"
+				ones--
+				n--
+			}
+			for ones < 4 && ones > 0 {
 				roman += "I"
 				ones--
 				n--
@@ -80,7 +85,6 @@ func ToRomanNumeral(n int) (string, error) {
 				ones -= 4
 				n -= 4
 			}
-
 		}
 	}
 	return roman, nil
